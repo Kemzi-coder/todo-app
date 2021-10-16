@@ -1,0 +1,45 @@
+<h2>Your todos</h2>
+
+{{#if todos.length}}
+<ul>
+	{{#each todos}}
+		<li class="todo">
+			<form>
+				<label>
+					{{#if completed}}
+						<input type="checkbox" checked name="completed">
+						<span>
+							<input id="title" class="title completed" type="text" name="title" value="{{title}}" readonly>
+						</span>
+					{{else}}
+						<input type="checkbox" name="completed">
+						<span>
+							<input id="title" class="title" type="text" name="title" value="{{title}}" readonly>
+						</span>
+					{{/if}}
+
+					<input type="hidden" value="{{_id}}" name="id">
+
+					<div>
+						<button class="btn btn-small purple" type="submit" formaction="/complete" formmethod="POST">Save</button>
+						{{#if completed}}
+							<button id="edit" class="btn btn-small purple" disabled>
+								<i class="large material-icons">edit</i>
+							</button>
+						{{else}}
+							<button id="edit" class="btn btn-small purple">
+								<i class="large material-icons">edit</i>
+							</button>
+						{{/if}}
+						<button class="btn btn-small purple" type="submit" formaction="/delete" formmethod="POST">
+							<i class="large material-icons">delete</i>
+						</button>
+					</div>
+				</label>
+			</form>
+		</li>
+	{{/each}}
+</ul>
+{{else}}
+<p>No todos!</p>
+{{/if}}

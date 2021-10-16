@@ -1,0 +1,59 @@
+.todo {
+	margin-bottom: 1rem;
+}
+
+.todo input.completed {
+	text-decoration: line-through;
+	text-decoration-color: #9c27b0;
+}
+
+.todo input.title {
+	height: auto;
+	border: none;
+	line-height: normal;
+}
+
+.todo input.title:focus {
+	box-shadow: none !important;
+	border: none !important;
+}
+
+.todo span {
+	flex: 1;
+	padding-right: 17px;
+}
+
+.todo label {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+	background: #f3f3f3;
+	padding: 1rem;
+}
+
+.todo i {
+	z-index: 2;
+}
+
+[type="checkbox"]:checked+span:not(.lever):before {
+	border-right-color: #9c27b0;
+	border-bottom-color: #9c27b0;
+}
+
+input:focus {
+	border-bottom: 1px solid royalblue !important;
+	box-shadow: 0 1px 0 0 #9c27b0 !important;
+}
+
+label.active {
+	color: #9c27b0 !important;
+}
+
+@media (max-width: 420px) {
+	nav .brand-logo {
+		left: 0.5rem !important;
+		transform: translate(0) !important;
+	}
+}
