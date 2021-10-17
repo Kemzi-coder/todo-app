@@ -13,32 +13,6 @@ class TodoController {
 		}
 	}
 
-	async renderIndex(req, res) {
-		try {
-			const todos = await TodoService.getAll()
-			res.render('index', {
-				title: 'Todos list',
-				isIndex: true,
-				script: '/script.js',
-				todos
-			})
-		} catch (e) {
-			res.status(500).json(e.message)
-		}
-	}
-
-	async renderCreate(req, res) {
-		try {
-			res.render('create', {
-				title: 'Create todo',
-				isCreate: true,
-				script: '/create.js'
-			})
-		} catch (e) {
-			res.status(500).json(e.message)
-		}
-	}
-
 	async complete(req, res) {
 		try {
 			await TodoService.complete(req.body)

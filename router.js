@@ -1,11 +1,12 @@
 import {Router} from 'express'
 import TodoController from './models/TodoController.js'
+import AppController from './models/AppController.js'
 
 const router = new Router()
 
-router.get('/', TodoController.renderIndex)
+router.get('/', AppController.renderIndex)
 
-router.get('/create', TodoController.renderCreate)
+router.get('/create', AppController.renderCreate)
 
 router.post('/create', TodoController.create)
 
